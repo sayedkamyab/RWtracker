@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>  
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="UnScripted.js"></script>    
+  <style>
+  th, tr, p, h3 {
+    text-align: center
+  }    
+  </style>
+</head>
+    <body>
+      <div class="container">
+        <br>
+        <p>In His Name and By The Grace of His Last Hujjat (a.t.f.s)</p>        
+        <h3>RW WorkTracker - 2020</h3>        
+        <label>Month :</label>
+        <select id="month">
+          <option value="Jan">January</option>
+          <option value="Feb">Febuary</option>
+          <option value="Mar">March</option>
+          <option value="Apr">April</option>
+          <option value="May">May</option>
+          <option value="Jun">June</option>
+          <option value="Jul">July</option>
+          <option value="Aug">August</option>
+          <option value="Sep">September</option>
+          <option value="Oct">October</option>
+          <option value="Nov">November</option>
+          <option value="Dec">December</option>
+        </select>
+        <br>
+        <label class="checkbox-inline"><input type="checkbox" id="oap">OverAll Pending</label>        
+        <br><br>
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#home">Completed</a></li>
+          <li><a data-toggle="tab" href="#menu1">Working</a></li>
+          <li><a data-toggle="tab" href="#menu2">Pending</a></li>          
+          <li><a data-toggle="tab" href="#menu3">Upcoming</a></li>
+          <li id="navoap" style="display: none;"><a data-toggle="tab" href="#menu4">OverAll Pending</a></li>          
+        </ul>
+      
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <h3>List of Completed Task</h3>
+            <div class="table-responsive">
+              <table id="c" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Section</th>
+                    <th>Task</th>
+                    <th>Assigned To</th>
+                    <th>Done By</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="menu1" class="tab-pane fade">
+            <h3>List of Working Task</h3>
+            <div class="table-responsive">
+              <table id="w" class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Section</th>
+                    <th>Task</th>
+                    <th>Assigned To</th>               
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>           
+          </div>
+          <div id="menu2" class="tab-pane fade">
+            <h3>List of Pending Task</h3>            
+          </div>          
+          <div id="menu3" class="tab-pane fade">
+            <h3>List of Upcoming Task</h3>            
+          </div>
+          <div id="menu4" class="tab-pane fade">
+            <h3>List of OverAll Pending Task</h3>            
+          </div>
+        </div>        
+  </div>
+  </body>
+  </html>

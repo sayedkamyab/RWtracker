@@ -37,7 +37,13 @@ $(function()
       var wdata = fdata.filter(function(entry){
         return entry.Remark === 'W'
       })
-      var tr;      
+      var pdata = fdata.filter(function(entry){
+        return entry.Remark === 'P' || entry.Remark == ''
+      })
+      var apdata = data.filter(function(entry){
+        return entry.Remark === 'P' || entry.Remark == ''
+      })
+      var tr;               
     for (var i = 0; i < cdata.length; i++) {
       tr = $('<tr/>');    
       tr.append("<td>" + cdata[i].Section + "</td>");
@@ -52,6 +58,40 @@ $(function()
       tr.append("<td>" + wdata[i].Task + "</td>");
       tr.append("<td>" + wdata[i].AssignedTo + "</td>");                       
       $('#w').append(tr);
+    }
+    for (var i = 0; i < pdata.length; i++) {
+      tr = $('<tr/>');    
+      tr.append("<td>" + pdata[i].Section + "</td>");
+      tr.append("<td>" + pdata[i].Task + "</td>");
+      tr.append("<td>" + pdata[i].AssignedTo + "</td>");                       
+      $('#p').append(tr);
+    }
+    for (var i = 0; i < apdata.length; i++) {
+      tr = $('<tr/>');    
+      tr.append("<td>" + apdata[i].Section + "</td>");
+      tr.append("<td>" + apdata[i].Task + "</td>");
+      tr.append("<td>" + apdata[i].Month + "</td>");
+      tr.append("<td>" + apdata[i].AssignedTo + "</td>");                       
+      $('#ap').append(tr);
+    }
+    var dict = {
+      Jan : 'Feb', Feb : 'Mar', Mar : 'Apr', Apr : 'May', May : 'Jun', Jun : 'Jul', Jul : 'Aug', Aug : 'Sep', Sep : 'Oct', Oct : 'Nov', Nov : 'Dec', Dec : 12
+    };
+    if ($('#month').val() != 'Dec')
+    {
+      var up = dict[$('#month').val()]              
+      $('span').empty()
+      $('span').append(up)  
+      var udata = data.filter(function(entry){
+        return entry.Month == up && entry.Remark == ''
+      })                
+      for (var i = 0; i < udata.length; i++) {
+        tr = $('<tr/>');    
+        tr.append("<td>" + udata[i].Section + "</td>");
+        tr.append("<td>" + udata[i].Task + "</td>");        
+        tr.append("<td>" + udata[i].AssignedTo + "</td>");                       
+        $('#u').append(tr);
+      }
     }
     }
     window.addEventListener('DOMContentLoaded', init)    
